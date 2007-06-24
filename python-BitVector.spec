@@ -1,6 +1,6 @@
 %define		module BitVector
 Summary:	A pure-Python memory-efficient packed representation for bit arrays
-Summary(pl.UTF-8):	Czysto Pythonowa, efektywna pamięciowo reprezentacja tablic bitów
+Summary(pl.UTF-8):	Czysto pythonowa, efektywna pamięciowo reprezentacja tablic bitów
 Name:		python-BitVector
 Version:	1.3
 Release:	0.9
@@ -9,21 +9,22 @@ Group:		Libraries
 Source0:	http://rvl4.ecn.purdue.edu/~kak/dist/%{module}-%{version}.tar.bz2
 # Source0-md5:	c74c9b4b34296249c766f0f4e7960be2
 URL:		http://cobweb.ecn.purdue.edu/~kak/dist/junk.html
-BuildRequires:	python-devel
-Requires:	python
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python-libs
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 This class presents a pure-Python memory efficient packed
 representation for bit arrays.
 
 %description -l pl.UTF-8
-Ta klasa prezentuje czysto Pythonową, efektywną pamięciowo
+Ta klasa prezentuje czysto pythonową, efektywną pamięciowo
 reprezentację dla tablic bitów.
 
 %prep
-%setup -q -n  %{module}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 %{__python} setup.py build
