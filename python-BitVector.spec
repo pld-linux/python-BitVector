@@ -39,14 +39,14 @@ Pakiet zawierający przykłady użycia modułu BitVector.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
+%py_install -O1 --skip-build --root $RPM_BUILD_ROOT
 
 cp -a Examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
