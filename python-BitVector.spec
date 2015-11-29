@@ -9,6 +9,7 @@ Group:		Libraries
 Source0:	http://rvl4.ecn.purdue.edu/~kak/dist/%{module}-%{version}.tar.bz2
 # Source0-md5:	460a0c164bee3b4582db4ad453e33d3b
 URL:		http://cobweb.ecn.purdue.edu/~kak/dist/junk.html
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
